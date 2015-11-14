@@ -6,18 +6,16 @@
  * description: A root class for all manage classes. This class communicates with DB
  */
 
-// define("DB_HOST", '127.0.0.1');
-// define("DB_NAME", 'course_repository');
-// define("DB_PORT", 3306);
-// define("DB_USER","root");
-// define("DB_PWORD","Ashesi.2016");
-
+//define("DB_HOST", 'localhost');
+//define("DB_NAME", 'csashesi_memory-mumbi');
+//define("DB_PORT", 3306);
+//define("DB_USER","csashesi_mm16");
+//define("DB_PWORD", "db!0Z9T+");
 define("DB_HOST", 'localhost');
-define("DB_NAME", 'course_repository');
+define("DB_NAME", 'webtech');
 define("DB_PORT", 3306);
 define("DB_USER","root");
 define("DB_PWORD","");
-
 
 define("LOG_LEVEL_SEC",0);
 define("LOG_LEVEL_DB_FAIL",0);
@@ -96,7 +94,7 @@ class adb {
         
 	/**
 	*returns a row from a data set
-	*/
+	*/ 
     function fetch() {
         return mysql_fetch_assoc($this->result);
     }
@@ -104,7 +102,7 @@ class adb {
     /**
 	* connect to db and run a query 
 	*/
-    function query($str_sql) {
+    function query($str_sql) { 
 		
         if (!$this->connect()) {		
             return false;
