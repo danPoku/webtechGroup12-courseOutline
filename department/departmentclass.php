@@ -11,6 +11,7 @@ class department extends adb{
  {}
 
 
+
 /**this function would set into table, departmenttable, with parameters id,name,courses,majors,description
 *@param $id //the id of the department
 *@param $name // name of department
