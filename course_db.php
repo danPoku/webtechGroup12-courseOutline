@@ -3,15 +3,20 @@ include_once("adb.php");
 	class course_db extends adb{
 
 		//function course_db(){};
-		function add_course($course_nm, $course_des, $credit_hrs, $semes, $maj, $dept, $year){
+		function add_course($course_nm, $course_des, $lec_nm, $fi_nm, $c_preq, $c_cd, $credit_hrs, 
+			$semes, $year, $dept){
 			$str_query="INSERT INTO course SET
 						course_name='$course_nm',
 						course_descript='$course_des',
+						lec_name='$lec_nm',
+						fi_name='$fi_nm',
+						course_prereq='$c_preq',
+						course_code='$c_cd',
 						credit_hr='$credit_hrs',
 						semester='$semes',
-						course_major='$maj',
-						course_dept='$dept',
-						year='$year'";
+						year='$year',
+						course_dept='$dept'";
+
 			return $this->query($str_query);
 
 		}
