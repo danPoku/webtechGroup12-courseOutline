@@ -49,6 +49,37 @@ default:
 }
 
 
+/**this function commuunicates between the client interface and database class interface
+*@param $id //the id of the department
+*@param $name // name of department
+*@param $courses //courses in the department
+*@param $majors //majors the department has
+*@param $description //description of the department
+*/
+function addDepartment()
+{
+      include('departmentclass.php');
+      $obj= new department();
+      $id=$_REQUEST['id'];
+      $name=$_REQUEST['name'];
+      $courses=$_REQUEST['courses'];
+      $majors=$_REQUEST['majors'];
+      $description=$_REQUEST['description'];
+
+     
+      $obj->addDepartment($id, $name, $courses, $majors, $description);
+      $row=$obj->fetch();
+
+      if(!$row){
+      echo '{"result":"0", "message":"could not add into database"}';
+      }
+      else{
+            echo '{"result":"2", "message:"new department added into database"}';
+      }
+}
+
+
+/*
 
 function getDepartment()
 {
@@ -107,26 +138,7 @@ function getAllDepartments()
 }
 
 
-function addDepartment()
-{
-      include('departmentclass.php');
-      $obj= new department();
-      $id=$_REQUEST['id'];
-      $name=$_REQUEST['name'];
-      $courses=$_REQUEST['courses'];
-      $majors=$_REQUEST['majors'];
-      $description=$_REQUEST['description'];
 
-      $obj->addDepartment($id, $name, $courses, $majors, $description);
-      $row=$obj->fetch(); 
-
-      if(!$row){
-      echo '{"result":"0", "message":"could not add into database"}';
-      }
-      else{
-            echo '{"result":"2", "message:"new department added into database"}';
-      }
-}
 
 
 function updateDepartment()
@@ -196,7 +208,7 @@ function searchDepartment()
     }
 }
 
-
+*/
 
 
 
