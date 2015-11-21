@@ -21,11 +21,13 @@ class administrator extends adb{
 	*@return boolean Indicates whether query run returns true or false
 	*/
 	function search_admin($email, $password){
-		 $str_query="select email, password from administrator where email='$email' AND password='$password'";
+		 $str_query="select email, password from administrator where email='$username' AND password='$password'";
 		return $this->query($str_query);
 	}
 
 }
 
+$obj=new administrator;
+$obj->add_admin("dan.poku@ashesi.edu.gh", "55555", "student");
 
 ?>
