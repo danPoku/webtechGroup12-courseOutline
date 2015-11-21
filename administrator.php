@@ -1,16 +1,27 @@
 <?php
 include_once("adb.php");
 class administrator extends adb{
+
 	function administrator(){}
 
-	function add_admin($username, $password, $email){
-		$str_query="insert into administrator set username='$username', password='$password', email='$email'";
+	/**
+	*@param string $email variable to store email
+	*@param string $password variable to store password
+	*@param string $permission variable to store assigned user privilege
+	*@return boolean Indicates whether query run was successful or not
+	*/
+	function add_admin($email, $password, $permission){
+		$str_query="insert into administrator set email='$email', password='$password', permission='$permission'";
 		return $this->query($str_query);
 	}
 
-	function search_admin($username, $password){
-		//$sql = "EXPLAIN SELECT * FROM `administrator` WHERE username=\'$username\' and password=\'$password\'";
-		 $str_query="select username, password from administrator where username='$username' AND password='$password'";
+	/**
+	*@param string $email stores user entered email
+	*@param string $password stores user entered password
+	*@return boolean Indicates whether query run returns true or false
+	*/
+	function search_admin($email, $password){
+		 $str_query="select email, password from administrator where email='$email' AND password='$password'";
 		return $this->query($str_query);
 	}
 
