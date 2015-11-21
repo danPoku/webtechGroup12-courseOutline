@@ -26,8 +26,3 @@ class administrator extends adb{
 	}
 
 }
-
-$obj=new administrator;
-$obj->add_admin("dan.poku@ashesi.edu.gh", "55555", "student");
-
-?>
