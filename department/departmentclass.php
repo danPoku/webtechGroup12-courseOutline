@@ -9,7 +9,7 @@
 include_once("adb.php");
 class department extends adb{
  function department()
- {}
+ {} 
 
 
 
@@ -41,7 +41,7 @@ class department extends adb{
 *@param $courses //cpurses in the department
 *@param $majors //majors the department has
 *@param $description //description of the department
-
+*/
 function updateDepartment($id, $name, $courses, $majors, $description)
 {
 $query="UPDATE departmenttable SET departmentName='$name', courses='$courses', departmentMajors='$majors', description='$description' WHERE departmentID='$id'";
