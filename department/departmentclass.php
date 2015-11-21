@@ -24,14 +24,7 @@ class department extends adb{
  {
  	$query="INSERT INTO departmenttable SET departmentID='$id', departmentName='$name', courses='$courses', departmentMajors='$majors', description='$description'";
  	return $this->query($query);
- 	/*
-   if(!$query){
-   	  return $this->query($query);
-   }
-   else{
-   	echo "error";
-   }*/
- 	
+
  }
 
 
@@ -41,7 +34,7 @@ class department extends adb{
 *@param $courses //cpurses in the department
 *@param $majors //majors the department has
 *@param $description //description of the department
-*/
+
 function updateDepartment($id, $name, $courses, $majors, $description)
 {
 $query="UPDATE departmenttable SET departmentName='$name', courses='$courses', departmentMajors='$majors', description='$description' WHERE departmentID='$id'";
