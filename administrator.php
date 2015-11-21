@@ -26,8 +26,6 @@ class administrator extends adb{
 	}
 
 }
-// $sql = "EXPLAIN SELECT * FROM `administrator` WHERE username=\'$username\' and password=\'$password\'";
-/*$obj=new administrator;
-$obj->add_admin("group12", "0000", "group@example.com");*/
+
 
 ?>
