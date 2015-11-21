@@ -31,10 +31,10 @@ ob_start();
 <!--                    <td style="color:chocolate">Email</td>-->
                     <td><input type="text" name="email" id="st" class="box" placeholder="Email" required="required"></td>
                 </tr>
-                <tr>
-<!--                    <td style="color:chocolate">Username</td>-->
-                    <td><input type="text" name="uname" id="nd" class="box" placeholder="Username" required="required"></td>
-                </tr>
+<!--                 <tr>
+<td style="color:chocolate">Username</td>
+    <td><input type="text" name="uname" id="nd" class="box" placeholder="Username" required="required"></td>
+</tr> -->
                 <tr>
 <!--                    <td style="color:chocolate">Password</td>-->
                     <td><input type="password" name="pwd" id="rd" class="box" placeholder="Password" required="required"></td>
@@ -112,13 +112,13 @@ include ("administrator.php");
 
         $obj=new administrator;
         $email=$_POST['email'];
-        $user=$_POST['uname'];
+        // $user=$_POST['uname'];
         $pass=$_POST['pwd'];
         $_SESSION["session"]=$user;
-        if($user=="" || $pass=="")
+        if($email=="" || $pass=="")
             echo "Not all fields were entered";
 
-        $obj->search_admin($user, $pass);
+        $obj->search_admin($email, $pass);
         $result=$obj->get_num_rows();
 
         if($result==0){
