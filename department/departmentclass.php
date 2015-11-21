@@ -24,13 +24,6 @@ class department extends adb{
  {
  	$query="INSERT INTO departmenttable SET departmentID='$id', departmentName='$name', courses='$courses', departmentMajors='$majors', description='$description'";
  	return $this->query($query);
- 	/*
-   if(!$query){
-   	  return $this->query($query);
-   }
-   else{
-   	echo "error";
-   }*/
  	
  }
 
